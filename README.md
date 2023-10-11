@@ -1,6 +1,6 @@
 # The AirBnB_clone - The Console ⛪
 
-<p align="centre">## Python OOP</p>
+<p align="centre">Python OOP</p>
 
 A comprehensive web application comprising database storage, a back-end API, and a front-end interface.
 This console serves as our foundational stage in the development of a full-stack web application.
