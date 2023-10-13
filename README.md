@@ -15,12 +15,22 @@ It can be used to handle and manipulate all classes utilized by the application 
 The console can be run both interactively and non-interactively.
 To run the console in non-interactive mode, pipe any command(s) into an execution of the file ```console.py``` at the command line.
 
-```$ echo "help" | ./console.py
+## Interactive
+When using the AirBnB console in interactive mode, run the file ```console.py``` by itself:
 
-(hbnb)
-Documented commands (type help <topic>):
-========================================
-EOF  all  count  create  destroy  help  quit  show  update.
+```$ ./console.py```
 
-(hbnb)
+While it's running in the interactive mode, the console displays a prompt for input:
+
+```$ ./console.py
+(hbnb)```
+
+To quit the console, the command ```quit```, or the EOF signal (```ctrl-D```) is implemented
+
+```$ ./console.py
+(hbnb) quit
+$```
+
+```$ ./console.py
+(hbnb) EOF
 $```
