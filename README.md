@@ -15,8 +15,8 @@ It can be used to handle and manipulate all classes utilized by the application 
 The console can be run both interactively and non-interactively.
 To run the console in non-interactive mode, pipe any command(s) into an execution of the file ```console.py``` at the command line.
 
-```$ echo "help" | ./console.py
-(hbnb)
+```$ echo "help" | ./console.py```
+```(hbnb)
 Documented commands (type help <topic>):
 ========================================
 EOF  all  count  create  destroy  help  quit  show  update.
