@@ -24,7 +24,10 @@ While it's running in the interactive mode, the console displays a prompt for in
 
 ```
 $ ./console.py
-(hbnb)```
+(hbnb)
+```
+
+
 
 To quit the console, the command ```quit```, or the EOF signal (```ctrl-D```) is implemented
 
