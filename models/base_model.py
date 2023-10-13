@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-
 from datetime import datetime
 from uuid import uuid4
-from . import storage
-
+import models
 
 
 class BaseModel:
@@ -30,12 +28,11 @@ class BaseModel:
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
-        storage.new(self)
-
         if kwargs != {}:
             for key, value in kwargs.items():
                 if key == '__class__':
                     continue
+                if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, key, value)
         else:
@@ -59,14 +56,11 @@ class BaseModel:
         """
         Updates the `updated_at` attribute to the current timestamp.
         """
-        self.updated_at = datetime.now()
-        storage.save()
-
-
-
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self):
         self.__dict__["__class__"] = __class__.__name__
-        self.create_at = self.created_at.isoformat()
+        self.created_at = self.created_at.isoformat()
         self.updated_at = self.updated_at.isoformat()
         return self.__dict__
