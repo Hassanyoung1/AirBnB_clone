@@ -68,6 +68,6 @@ $
 
 ## Authors: 🧠
 
-Hassan Olaoluwa Hakeem <github.com/Hassanyoung1>
+[Hassan Olaoluwa Hakeem](github.com/Hassanyoung1)
 
-Eucharia Okoye <github.com/Karisma-471>
+[Eucharia Okoye](github.com/Karisma-471)
