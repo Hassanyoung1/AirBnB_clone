@@ -22,15 +22,9 @@ When using the AirBnB console in interactive mode, run the file ```console.py```
 
 While it's running in the interactive mode, the console displays a prompt for input:
 
-```$ ./console.py
+```
+$ ./console.py
 (hbnb)```
 
 To quit the console, the command ```quit```, or the EOF signal (```ctrl-D```) is implemented
 
-```$ ./console.py
-(hbnb) quit
-$```
-
-```$ ./console.py
-(hbnb) EOF
-$```
