@@ -65,3 +65,9 @@ $ ./console.py
 (hbnb) EOF
 $
 ```
+
+## Authors: 🧠
+
+Hassan Olaoluwa Hakeem <github.com/Hassanyoung1>
+
+Eucharia Okoye <github.com/Karisma-471>
