@@ -31,3 +31,14 @@ $ ./console.py
 
 To quit the console, the command ```quit```, or the EOF signal (```ctrl-D```) is implemented
 
+```
+$ ./console.py
+(hbnb) quit
+$
+```
+
+```
+$ ./console.py
+(hbnb) EOF
+$
+```
