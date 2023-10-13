@@ -10,3 +10,7 @@ allowing interactive data model manipulation, object management, and command exe
 ## The Console 
 The console is a command line interpreter that permits management of the backend of AirBnB.
 It can be used to handle and manipulate all classes utilized by the application (achieved by calls on the ```storage``` object defined above).
+
+## How It Works
+The console can be run both interactively and non-interactively.
+To run the console in non-interactive mode, pipe any command(s) into an execution of the file ```console.py``` at the command line.
