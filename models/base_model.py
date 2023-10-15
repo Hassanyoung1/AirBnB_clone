@@ -1,4 +1,12 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""
+base_model module: contains a class `BaseModel` that defines common
+attributes/methods for other classes in the AirBnB project.
+
+You can test this module using the following command:
+python3 -m unittest tests/test_models/test_base_model.py
+"""
+
 from datetime import datetime
 from uuid import uuid4
 import models
@@ -6,61 +14,85 @@ import models
 
 class BaseModel:
     """
-    The BaseModel class defines a basic model with common
-    attributes and methods for other classes.
+    BaseModel class: defines all common attributes/methods for other classes
 
     Attributes:
-        id (str): A unique identifier generated using uuid4().
-        created_at (datetime): The timestamp indicating
-        the object's creation time.
-        updated_at (datetime): The timestamp indicating the
-        object's last modification time.
+        id (str): Unique identifier for each instance.
+
+        created_at (datetime): The date and time
+        when the instance was created.
+
+        updated_at (datetime): The date and time when the
+        instance was last updated.
 
     Methods:
-        __init__(): Initializes a new BaseModel instance with a unique ID,
-        creation, and update timestamps.
-        __str__(): Returns a string representation of the BaseModel object.
-        save(): Updates the `updated_at` attribute to the current timestamp.
-        to_dict(): Converts the BaseModel object to a dictionary representation
+        __init__: initializes a new instance of BaseModel
+
+        __str__: returns an informal string representation of an instance
+
+        save: updates the public instance attribute `updated_at` with
+        the current datetime
+
+        to_dict: returns a dictionary containing all keys/values of
+        __dict__ of the instance
     """
 
     def __init__(self, *args, **kwargs):
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
-        if kwargs != {}:
+        """
+        Initialize a BaseModel instance
+
+        Args:
+            id (str): Assigned with a unique identifier when an
+            instance is created.
+
+            created_at (datetime): Assigned with the current
+            datetime when an instance is created.
+
+
+            updated_at (datetime): Assigned with the current
+            datetime when an instance is created
+            and updated every time you change your object.
+        """
+        if kwargs:
             for key, value in kwargs.items():
-                if key == '__class__':
+                if key == "__class__":
                     continue
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, key, value)
         else:
-            self.created_at = datetime.now()
             self.id = str(uuid4())
-            """
-            Initializes a new BaseModel instance.
-            """
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
+
     def __str__(self):
         """
-        Returns a string representation of the BaseModel object.
+        Returns an informal string representation of an instance
 
         Returns:
-            str: A formatted string containing the class name, ID,
-            and dictionary representation.
+            str: String representation of BaseModel attributes
         """
-        return "[{}] ({}) {}".format(__class__.__name__, self.id,
-                                     self.__dict__)
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
         """
-        Updates the `updated_at` attribute to the current timestamp.
+        Updates the public instance attribute `updated_at` with
+        the current datetime
         """
-        models.storage.new(self)
+        self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
-        self.__dict__["__class__"] = __class__.__name__
-        self.created_at = self.created_at.isoformat()
-        self.updated_at = self.updated_at.isoformat()
-        return self.__dict__
+        """
+        Returns a dictionary containing all keys/values of
+        __dict__ of the instance
+
+        Returns:
+            dict: Dictionary containing the attributes of BaseModel
+        """
+        dicts = self.__dict__.copy()
+        dicts["__class__"] = self.__class__.__name__
+        dicts["created_at"] = self.created_at.isoformat()
+        dicts["updated_at"] = self.updated_at.isoformat()
+        return dicts
