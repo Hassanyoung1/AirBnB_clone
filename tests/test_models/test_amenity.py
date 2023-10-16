@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Unit tests for the amenity module.
+    Unit tests for the amenity module.
 
-Usage:
-    Run all tests: python3 -m unittest discover tests
-    Run specific file: python3 -m unittest tests.test_models.test_amenity
+    Usage:
+        Run all tests: python3 -m unittest discover tests
+        Run specific file: python3 -m unittest tests.test_models.test_amenity
 """
 
 from models import amenity

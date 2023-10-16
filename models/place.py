@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 
+"""
+Place Module: contains the Place class that represents information about
+accommodations in the AirBnB project.
+"""
+
 from .base_model import BaseModel
 
 
 class Place(BaseModel):
     """
-    Place class: represents information about accommodations in
-      the AirBnB project.
+    Place class: represents information about accommodations
+    in the AirBnB project.
 
     Attributes:
         city_id (str): The ID of the city where the place is located.
 
         user_id (str): The ID of the user who owns the place.
-
         name (str): The name of the place.
 
         description (str): A description of the place.
@@ -30,25 +34,13 @@ class Place(BaseModel):
 
         longitude (float): The longitude coordinate of the place.
 
-        amenity_ids (str): A string representing Amenity IDs associated
-        with the place.
+        amenity_ids (str): A string representing Amenity
+        IDs associated with the place.
 
     Methods:
         __init__: initializes a new instance of Place,
         inherits attributes from BaseModel
     """
-
-    city_id = ""
-    user_id = ""
-    name = ""
-    description = ""
-    number_rooms = 0
-    number_bathrooms = 0
-    max_guest = 0
-    price_by_night = 0
-    latitude = 0.0
-    longitude = 0.0
-    amenity_ids = ""
 
     def __init__(self, *args, **kwargs):
         """

@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+"""
+Review Module: contains the Review class that represents
+user reviews for places in the AirBnB project.
+
+"""
+
 from .base_model import BaseModel
 
 
@@ -14,12 +20,8 @@ class Review(BaseModel):
 
     Methods:
         __init__: initializes a new instance of Review,
-          inherits attributes from BaseModel
+            inherits attributes from BaseModel
     """
-
-    place_id = ""
-    user_id = ""
-    text = ""
 
     def __init__(self, *args, **kwargs):
         """

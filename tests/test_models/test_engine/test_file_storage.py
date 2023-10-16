@@ -1,36 +1,52 @@
 #!/usr/bin/python3
 """
-Unit tests for the base_model module.
+test_file_storage module: Unit tests for the file_storage module
 
-Usage:
-    Run all tests: python3 -m unittest discover tests
-    Run specific file: python3 -m unittest tests.test_models.test_base_model
+To run the tests, use the following command:
+(python3 -m unittest discover tests)
+or
+(python3 -m unittest tests/test_models/test_file_storage.py)
 """
 
-from models import base_model
+from models.engine import file_storage
 import inspect
 import unittest
 
-class TestBaseModelDocumentation(unittest.TestCase):
-    """
-    TestBaseModelDocumentation: (class) - unittest subclass to 
-    test docstrings in base_model module
-    
-    """
 
+class Testfile_storage(unittest.TestCase):
+    """
+    Testfile_storage: (class) - unittest subclass to run test cases
+    on file_storage
+    """
     @classmethod
-    def setUpClass(cls):
+    def setUp(cls):
         """
-        setUpClass: (class method) - called before any tests are executed
+        setUp: (class method) - method for sharing resources across all methods
 
-        Sets up a list of all the functions in BaseModel.
+        setup: assigned with a list of all the functions in FileStorage
         """
-        cls.base_model_functions = inspect.getmembers(base_model.BaseModel, inspect.isfunction)
+        cls.setup = inspect.getmembers(file_storage.FileStorage,
+                                       inspect.isfunction)
 
-    def test_module_docstring_exists(self):
+    def test_module_docs(self):
         """
-        Check if the module has a docstring.
+        Test the module-level docstring
         """
-        self.assertTrue(len(base_model.__doc__) >= 1)
+        self.assertTrue(len(file_storage.__doc__) >= 1)
 
-    def test_class_docstring
+    def test_class_docs(self):
+        """
+        Test the class-level docstring
+        """
+        self.assertTrue(len(file_storage.FileStorage.__doc__) >= 1)
+
+    def test_function_docs(self):
+        """
+        Test the function-level docstrings
+        """
+        for each_func in self.setup:
+            self.assertTrue(len(each_func.__doc__) >= 1)
+
+
+if __name__ == "__main__":
+    unittest.main()

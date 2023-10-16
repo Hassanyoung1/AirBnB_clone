@@ -1,5 +1,22 @@
 #!/usr/bin/env python3
 
+"""
+City Module
+===========
+
+This module contains the City class, which represents cities in the AirBnB project.
+
+Classes:
+    City: Represents a city with attributes like state_id and name.
+
+Usage:
+    To create a new city instance:
+    >>> city = City()
+
+    You can also specify attributes during initialization:
+    >>> city = City(state_id='123', name='Example City')
+"""
+
 from .base_model import BaseModel
 
 

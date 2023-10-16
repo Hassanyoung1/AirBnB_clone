@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
-from .base_model import BaseModel
+"""
+State Module: contains the State class that represents
+states in the AirBnB project.
+"""
 
-""" Declare the class """
+from .base_model import BaseModel
 
 
 class State(BaseModel):
@@ -16,8 +19,6 @@ class State(BaseModel):
         __init__: initializes a new instance of State,
         inherits attributes from BaseModel
     """
-
-    name = ""
 
     def __init__(self, *args, **kwargs):
         """
