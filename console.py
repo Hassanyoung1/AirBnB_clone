@@ -47,22 +47,17 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_quit(self, args):
-
         """Quit command to exit the program """
-
         return True
 
     def do_EOF(self, args):
         """Exit the program"""
+        print()
         return True
 
     def emptyline(self):
         """Called when an empty line is entered."""
         pass
-
-    def postloop(self):
-        """Method executed once when cmdloop() is about to return."""
-        print()
 
     def do_create(self, args):
         """
