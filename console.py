@@ -47,11 +47,11 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_quit(self, args):
-        """Exit the program."""
+        """Quit command to exit the program"""
         return True
 
     def do_EOF(self, args):
-        """Exit the program."""
+        """Quit command to exit the program"""
         return True
 
     def emptyline(self):

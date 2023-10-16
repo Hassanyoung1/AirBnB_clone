@@ -4,7 +4,8 @@
 City Module
 ===========
 
-This module contains the City class, which represents cities in the AirBnB project.
+This module contains the City class, which
+represents cities in the AirBnB project.
 
 Classes:
     City: Represents a city with attributes like state_id and name.
