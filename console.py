@@ -39,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
     """
 
     intro = "A command interpreter to manipulate AirBnB data"
-    prompt = '(hbnb) '
+    prompt = '(hbnb)'
 
     objects = {
         'BaseModel': BaseModel, 'User': User, 'State': State,
@@ -47,11 +47,12 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_quit(self, args):
-        """Quit command to exit the program"""
+        """Quit command to exit the program """
+        
         return True
 
     def do_EOF(self, args):
-        """Quit command to exit the program"""
+        """Exit the program"""
         return True
 
     def emptyline(self):
