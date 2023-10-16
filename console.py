@@ -38,7 +38,6 @@ class HBNBCommand(cmd.Cmd):
     HBNBCommand: (class) - command interpreter to manipulate AirBnB data
     """
 
-    intro = "A command interpreter to manipulate AirBnB data"
     prompt = '(hbnb) '
 
     objects = {
